@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>NLP Udacity</title>
+    <link rel="icon" type="image/x-icon" href="/src/client/views/favicon.ico">
+
+  </head>
+
+  <body>
+   
+    <main>
+      <div class="FormContainer">
+        <form class="Form" onsubmit="return Client.handleClick(event)">
+          <strong>Write your article url here </strong>
+          <input
+            id="link"
+            type="text"
+            name="input"
+            value=""
+            placeholder="Type Article Link"
+            required
+          />
+          <input id="btn" type="submit" name="" value="Submit" />
+        </form>
+      </div>
+
+      <div class='LinkAnalysis'>
+        <strong>Sentiment</strong>  
+        <div id="AnalysisDetails"></div>
+      </div>
+    </main>
+
+   
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
+  </body>
+</html>
